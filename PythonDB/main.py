@@ -9,16 +9,13 @@ def unica_lista():
                 match val:
                     case 1:
                         conn1.query_lista_film()
-                        conn1.stop()
                         return False
                     case 2:
                         conn1.query_lista_attori()
-                        conn1.stop()
                         return False
                     case 3:
                         conn1.query_lista_attori()
                         conn1.query_lista_film()
-                        conn1.stop()
                         return False
             except ValueError:
                 print('Inserisci un numero intero')
@@ -26,4 +23,4 @@ def unica_lista():
 
 conn1=dataAccess()
 unica_lista()
-
+conn1.stop()
